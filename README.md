@@ -52,7 +52,7 @@ O projeto utiliza React Router para navegação entre diferentes páginas:
 ## US's
 
 - ✅ [US001] Montar esquema
-    -  [US001-1] Design das telas
+    - ✅ [US001-1] Design das telas
 -  [US002] Criar rotas e pages
     -  [US002-1] Page Usuario cadastro
     -  [US002-2] Page Usuario view
@@ -62,7 +62,7 @@ O projeto utiliza React Router para navegação entre diferentes páginas:
     -  [US002-6] Page Pauta view por id
 -  [US003] Criar componentes
     -  [US003-1] Componente card
-    -  [US003-2] Componente heard
+    -  [US003-2] Componente cabecalho
     -  [US003-3] Componente botao
     -  [US003-3] Componente formulario
     -  [US003-3] Componente input
