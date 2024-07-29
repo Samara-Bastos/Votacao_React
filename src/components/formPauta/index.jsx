@@ -1,9 +1,9 @@
 import './style.css';
-import InputForm from '../input';
+import Botao from "../../components/botao";
 import { useState } from 'react';
-import {FormControl,FormLabel, Switch} from '@chakra-ui/react';
+import {FormControl,FormLabel, Input, Switch} from '@chakra-ui/react';
 
-function FormPauta() {
+function FormPauta({onSubmit}) {
     const [FormDataPauta, setFormDataPauta] = useState({
         titulo: '',
         descricao: '',
@@ -25,12 +25,12 @@ function FormPauta() {
         <form className='FormUsuario'>
              <FormControl isRequired>
                 <FormLabel htmlFor='titulo'>Titulo</FormLabel>
-                <InputForm tipo={'text'} value={FormDataPauta.titulo} onChange={onChange} name='titulo' placeholder={'Preencha o titulo'} />        
+                <Input type={'text'} value={FormDataPauta.titulo} onChange={onChange} name='titulo' placeholder={'Preencha o titulo'} />        
             </FormControl>
 
             <FormControl>
                 <FormLabel htmlFor='descricao'>Descrição</FormLabel>
-                <InputForm tipo={'text'} value={FormDataPauta.descricao} onChange={onChange} name='descricao' placeholder={'Preencha a descrição'}  />
+                <Input type={'text'} value={FormDataPauta.descricao} onChange={onChange} name='descricao' placeholder={'Preencha a descrição'}  />
             </FormControl>
 
             <FormControl className='dFlex'>
@@ -40,12 +40,13 @@ function FormPauta() {
                 </div>
                 <div>
                     <FormLabel htmlFor='tempoSessao'>Tempo da sessão de votação</FormLabel>
-                    <InputForm tipo={'number'} value={FormDataPauta.tempoSessao} onChange={onChange} name='tempoSessao' />
+                    <Input type={'number'} value={FormDataPauta.tempoSessao} onChange={onChange} name='tempoSessao' />
                 </div>
             </FormControl>
+            
+            <Botao texto={'CADASTRAR'} onClick={(e) => onSubmit(e, FormDataPauta)} />
         </form>
     );
-
   }
   
   export default FormPauta;
