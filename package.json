@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
@@ -16,6 +17,7 @@
     "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
     "react-toastify": "^10.0.5",
+    "styled-components": "^6.1.12",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

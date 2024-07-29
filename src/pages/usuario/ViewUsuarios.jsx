@@ -1,10 +1,10 @@
-
+import TituloCard from "../../components/tituloCard";
 
 
 function ViewUsuarios(){
     return(
         <div>
-            AQUI VE TODOS OS USUARIOS
+            <TituloCard texto={'Usuários registrados'} color={'#FFFFFF'} />
         </div>
     )
 }
