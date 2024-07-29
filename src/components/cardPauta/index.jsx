@@ -1,9 +1,9 @@
 import './style.css'
 
-function CardPauta() {
+function CardPauta({children}) {
     return (
         <div className='cardPauta'>
-
+            {children}
         </div>
     )
   }

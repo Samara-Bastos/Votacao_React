@@ -3,6 +3,9 @@ import GridCardPauta from "../../components/gridCardPauta";
 import TituloCard from "../../components/tituloCard";
 
 function ViewPautas(){
+
+
+    
     return(
         <div>
             <TituloCard texto={'Pautas'} color={'#FFFFFF'} />

@@ -1,5 +1,7 @@
 .grid-CardPauta{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    column-gap: 55px;
+    row-gap: 80px;
+    margin-top: 30px;
 }
