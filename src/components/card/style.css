@@ -1,0 +1,5 @@
+.card{
+    min-height: 70vh;
+    min-width: 80vh !important;
+    border-radius: 18px !important;
+}
