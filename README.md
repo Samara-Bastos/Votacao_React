@@ -60,14 +60,13 @@ O projeto utiliza React Router para navegação entre diferentes páginas:
     - ✅ [US002-4] Page Pauta cadastro
     - ✅ [US002-5] Page Pauta view
     - ✅ [US002-6] Page Pauta view por id
--  [US003] Criar componentes
-    -  [US003-1] Componente card
-    -  [US003-2] Componente cabecalho
-    -  [US003-3] Componente botao
-    -  [US003-3] Componente formulario
-    -  [US003-3] Componente input
--  [US004] C
-    -  [US004-1] P
+- ✅ [US003] Criar componentes
+    - ✅ [US003-1] Componente card
+    - ✅ [US003-2] Componente cabecalho
+    - ✅ [US003-3] Componente botao
+    - ✅ [US003-3] Componente formulario
+    - ✅ [US003-3] Componente input
+-  [US004] Criar comunicação entre front e api
 
 
 ## US's - EXTRA
