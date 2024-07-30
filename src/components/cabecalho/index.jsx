@@ -10,7 +10,8 @@ import {
 
 import {
   AddIcon,
-  HamburgerIcon
+  HamburgerIcon,
+  CalendarIcon
 } from '@chakra-ui/icons';
 
 function Cabecalho() {
@@ -25,7 +26,7 @@ function Cabecalho() {
             />
             <MenuList>
             <Link to={`/`}>
-                <MenuItem icon={<AddIcon boxSize={4} />} command='⌘'>
+                <MenuItem icon={<CalendarIcon boxSize={4} />} command='⌘'>
                   Home
                 </MenuItem>
               </Link>
