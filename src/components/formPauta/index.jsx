@@ -1,12 +1,13 @@
 import './style.css';
-import InputForm from '../input';
+import Botao from "../../components/botao";
 import { useState } from 'react';
-import {FormControl,FormLabel, Switch} from '@chakra-ui/react';
+import {FormControl,FormLabel, Input, Switch, Select } from '@chakra-ui/react';
 
-function FormPauta() {
+function FormPauta({onSubmit}) {
     const [FormDataPauta, setFormDataPauta] = useState({
         titulo: '',
         descricao: '',
+        categoria: '',
         ativaSessao: '',
         tempoSessao: ''
     });
@@ -25,12 +26,22 @@ function FormPauta() {
         <form className='FormUsuario'>
              <FormControl isRequired>
                 <FormLabel htmlFor='titulo'>Titulo</FormLabel>
-                <InputForm tipo={'text'} value={FormDataPauta.titulo} onChange={onChange} name='titulo' placeholder={'Preencha o titulo'} />        
+                <Input variant='flushed' type={'text'} value={FormDataPauta.titulo} onChange={onChange} name='titulo' placeholder={'Preencha o titulo'} />        
             </FormControl>
 
             <FormControl>
                 <FormLabel htmlFor='descricao'>Descrição</FormLabel>
-                <InputForm tipo={'text'} value={FormDataPauta.descricao} onChange={onChange} name='descricao' placeholder={'Preencha a descrição'}  />
+                <Input variant='flushed' type={'text'} value={FormDataPauta.descricao} onChange={onChange} name='descricao' placeholder={'Preencha a descrição'}  />
+            </FormControl>
+
+            <FormControl isRequired>
+                <FormLabel htmlFor='categoria'>Categoria</FormLabel>
+                <Select variant='flushed' placeholder='Selecione' name='categoria' value={FormDataPauta.categoria} onChange={onChange}>
+                    <option>TECNOLOGIA</option>
+                    <option>EDUCAÇÃO</option>
+                    <option>CIÊNCIA</option>
+                    <option>ESPORTE</option>
+                </Select>
             </FormControl>
 
             <FormControl className='dFlex'>
@@ -40,12 +51,13 @@ function FormPauta() {
                 </div>
                 <div>
                     <FormLabel htmlFor='tempoSessao'>Tempo da sessão de votação</FormLabel>
-                    <InputForm tipo={'number'} value={FormDataPauta.tempoSessao} onChange={onChange} name='tempoSessao' />
+                    <Input variant='flushed' type={'number'} value={FormDataPauta.tempoSessao} onChange={onChange} name='tempoSessao' />
                 </div>
             </FormControl>
+            
+            <Botao texto={'CADASTRAR'} onClick={(e) => onSubmit(e, FormDataPauta)} />
         </form>
     );
-
   }
   
   export default FormPauta;
