@@ -24,8 +24,7 @@ function CadastroPauta(){
        <Box>
             <TituloCard texto={'Cadastro de pauta'} color={'#607a8d'} />
             <FormPauta onSubmit={onSubmit} />
-       </Box>
-              
+       </Box> 
     )
 }
 

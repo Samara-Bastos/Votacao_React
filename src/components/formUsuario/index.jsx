@@ -21,12 +21,12 @@ function FormUsuario({onSubmit}) {
         <form className='FormUsuario'>
              <FormControl isRequired>
                 <FormLabel htmlFor='nome'>Nome</FormLabel>
-                <Input type='text' value={FormDataUser.nome} onChange={onChange} name='nome' placeholder={'Preencha o seu nome completo'} />        
+                <Input variant='flushed' type='text' value={FormDataUser.nome} onChange={onChange} name='nome' placeholder={'Preencha o seu nome completo'} />        
             </FormControl>
 
             <FormControl isRequired>
                 <FormLabel htmlFor='cpf'>CPF</FormLabel>
-                <Input type='text' value={FormDataUser.cpf} onChange={onChange} name='cpf' placeholder={'Preencha o seu CPF com apenas números'}  />
+                <Input variant='flushed' type='text' value={FormDataUser.cpf} onChange={onChange} name='cpf' placeholder={'Preencha o seu CPF com apenas números'}  />
             </FormControl>
 
             <Botao texto={'CADASTRAR'} onClick={(e) => onSubmit(e, FormDataUser)} />
