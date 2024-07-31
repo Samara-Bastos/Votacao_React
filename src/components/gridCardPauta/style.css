@@ -1,7 +1,36 @@
 .grid-CardPauta{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 55px;
-    row-gap: 80px;
+    gap: 80px;
     margin-top: 30px;
+    width: 100%;
+}
+
+.formCategoria{
+    margin-bottom: 40px;
+    width: 30% !important;
+    float: right;
+    color:#FFFFFF;
+}
+
+@media (max-width: 1195px) {
+    .grid-CardPauta{
+        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .formCategoria{
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 701px) {
+    .grid-CardPauta{
+        gap: 30px;
+        grid-template-columns: 1fr;
+    }
+
+    .formCategoria{
+        width: 100% !important;
+    }
 }

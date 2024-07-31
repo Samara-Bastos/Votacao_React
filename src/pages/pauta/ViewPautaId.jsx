@@ -1,5 +1,6 @@
 import Botao from "../../components/botao";
 import Box from "../../components/card";
+import DetalhesPautaSelecionada from "../../components/detalhesPautaSelecionada";
 import TituloCard from "../../components/tituloCard";
 import Api from '../../lib/api';
 
@@ -16,7 +17,6 @@ function ViewPautaId(){
         Api.get(`/pauta/view/${id}`)
             .then((response) => {
                 const data = response.data;
-                console.log(data)
                 setPauta(data);
             })
             .catch((error) => {
@@ -28,7 +28,25 @@ function ViewPautaId(){
        <Box>
             {
                 Pauta ?(
-                    <TituloCard texto={Pauta.titulo} color={'#607a8d'} />
+                    <div style={{padding: '40px 50px 50px 50px'}}> 
+                        <TituloCard texto={'Detalhes'} color={'#607a8d'} />
+                            {
+                                Pauta.votacao ?(
+                                    <DetalhesPautaSelecionada
+                                    titulo={Pauta.titulo} 
+                                        descricao={Pauta.descricao} 
+                                        situacao={Pauta.votacao.situacao}
+                                        resultado={Pauta.votacao.resultado}
+                                        votosim={Pauta.votacao.votosSim}
+                                        votonao={Pauta.votacao.votosNao}
+                                    />
+                                ) : (
+                                    <DetalhesPautaSelecionada 
+                                        descricao={Pauta.descricao} 
+                                    />
+                                )
+                            }
+                    </div>
                 ):(
                     <span>A pauta não está disponivel no momento</span>
                 ) 

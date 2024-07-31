@@ -1,10 +1,21 @@
-import './style.css'
+import styled from 'styled-components';
 
-function CardPauta({children}) {
+const DivCard = styled.div`
+    min-width: 100%;
+    min-height: 160px ;
+    background-color: ${props => props.bg || ' rgba(255, 255, 255, 1)'};
+    border-radius: 18px !important;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`;
+
+function CardPauta({children, bg}) {
     return (
-        <div className='cardPauta'>
+        <DivCard bg={bg}>
             {children}
-        </div>
+        </DivCard>
     )
   }
   

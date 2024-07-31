@@ -26,6 +26,8 @@ Inicialização do projeto:
 - Chakra UI
 - Axios
 - React Toastify
+- Date-fns
+- Styled-components
 
 ## Rotas
 O projeto utiliza React Router para navegação entre diferentes páginas:
@@ -67,7 +69,7 @@ O projeto utiliza React Router para navegação entre diferentes páginas:
     - ✅ [US003-3] Componente formulario
     - ✅ [US003-3] Componente input
 - ✅ [US004] Criar comunicação entre front e api
--  [US005] Ajustar layout e responsividade
+- ✅ [US005] Ajustar layout e responsividade
 
 
 ## US's - EXTRA

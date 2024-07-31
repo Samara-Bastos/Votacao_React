@@ -1,5 +1,6 @@
 import './style.css';
 import { Link } from "react-router-dom";
+import Logo from '../../assets/logo.png'
 import {
   Menu,
   MenuButton,
@@ -10,13 +11,14 @@ import {
 
 import {
   AddIcon,
-  HamburgerIcon
+  HamburgerIcon,
+  CalendarIcon
 } from '@chakra-ui/icons';
 
 function Cabecalho() {
     return (
       <div className="Cabecalho">
-          <img src='' alt='logo'/>
+          <img className='logo' src={Logo} alt='logo'/>
           <Menu>
             <MenuButton
               as={IconButton}
@@ -25,7 +27,7 @@ function Cabecalho() {
             />
             <MenuList>
             <Link to={`/`}>
-                <MenuItem icon={<AddIcon boxSize={4} />} command='⌘'>
+                <MenuItem icon={<CalendarIcon boxSize={4} />} command='⌘'>
                   Home
                 </MenuItem>
               </Link>
@@ -38,7 +40,7 @@ function Cabecalho() {
 
               <Link to={`/pauta/view`}>
                 <MenuItem icon={<HamburgerIcon boxSize={4} />} command='⌘'>
-                  Pautas ativas
+                  Pautas
                 </MenuItem>
               </Link>
 
@@ -50,7 +52,7 @@ function Cabecalho() {
 
               <Link to={`/usuario/view`}>
                 <MenuItem icon={<HamburgerIcon boxSize={4} />} command='⌘'>
-                  Usuários cadastrados
+                  Usuários registrados
                 </MenuItem>
               </Link>
             </MenuList>

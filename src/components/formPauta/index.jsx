@@ -20,23 +20,23 @@ function FormPauta({onSubmit}) {
     const onChangeSwitch  = (e) =>{
         setFormDataPauta({...FormDataPauta, ativaSessao: e.target.checked});
     }
-
+ 
 
     return (
-        <form className='FormUsuario'>
-             <FormControl isRequired>
-                <FormLabel htmlFor='titulo'>Titulo</FormLabel>
-                <Input variant='flushed' type={'text'} value={FormDataPauta.titulo} onChange={onChange} name='titulo' placeholder={'Preencha o titulo'} />        
+        <form className='FormPauta'>
+             <FormControl isRequired className='formGrupo'>
+                <FormLabel className='label' htmlFor='titulo'>Titulo</FormLabel>
+                <Input className='input' variant='flushed' type={'text'} value={FormDataPauta.titulo} onChange={onChange} name='titulo' placeholder='Preencha o titulo' />        
             </FormControl>
 
-            <FormControl>
-                <FormLabel htmlFor='descricao'>Descrição</FormLabel>
-                <Input variant='flushed' type={'text'} value={FormDataPauta.descricao} onChange={onChange} name='descricao' placeholder={'Preencha a descrição'}  />
+            <FormControl className='formGrupo'>
+                <FormLabel className='label' htmlFor='descricao'>Descrição</FormLabel>
+                <Input className='input' variant='flushed' type={'text'} value={FormDataPauta.descricao} onChange={onChange} name='descricao' placeholder='Preencha a descrição' />
             </FormControl>
 
-            <FormControl isRequired>
-                <FormLabel htmlFor='categoria'>Categoria</FormLabel>
-                <Select variant='flushed' placeholder='Selecione' name='categoria' value={FormDataPauta.categoria} onChange={onChange}>
+            <FormControl isRequired className='formGrupo'>
+                <FormLabel className='label' htmlFor='categoria'>Categoria</FormLabel>
+                <Select className='input' variant='flushed' name='categoria' value={FormDataPauta.categoria} onChange={onChange}>
                     <option>TECNOLOGIA</option>
                     <option>EDUCAÇÃO</option>
                     <option>CIÊNCIA</option>
@@ -44,18 +44,20 @@ function FormPauta({onSubmit}) {
                 </Select>
             </FormControl>
 
-            <FormControl className='dFlex'>
-                <div>
-                    <FormLabel htmlFor='ativaSessao'>Abrir sessão de votação </FormLabel>
-                    <Switch name='ativaSessao' isChecked={FormDataPauta.ativaSessao} onChange={onChangeSwitch} />
+            <FormControl className='formGrupo dFlex'>
+                <div className='div-switch'>
+                    <FormLabel className='label' htmlFor='ativaSessao'>Abrir sessão de votação </FormLabel>
+                    <Switch className='input' name='ativaSessao' isChecked={FormDataPauta.ativaSessao} onChange={onChangeSwitch} />
                 </div>
                 <div>
-                    <FormLabel htmlFor='tempoSessao'>Tempo da sessão de votação</FormLabel>
-                    <Input variant='flushed' type={'number'} value={FormDataPauta.tempoSessao} onChange={onChange} name='tempoSessao' />
+                    <FormLabel className='label' htmlFor='tempoSessao'>Tempo da sessão de votação</FormLabel>
+                    <Input className='input' variant='flushed' type={'number'} value={FormDataPauta.tempoSessao} onChange={onChange} name='tempoSessao' placeholder='Em minutos, ex: 1 , 2 , 3 ...' />
                 </div>
             </FormControl>
-            
-            <Botao texto={'CADASTRAR'} onClick={(e) => onSubmit(e, FormDataPauta)} />
+
+            <FormControl className='submit'>
+                <Botao  texto={'CADASTRAR'} onClick={(e) => onSubmit(e, FormDataPauta)} />
+            </FormControl>
         </form>
     );
   }

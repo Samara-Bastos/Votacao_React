@@ -1,5 +1,7 @@
 .card{
-    min-height: 70vh;
-    min-width: 80vh !important;
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
     border-radius: 18px !important;
 }

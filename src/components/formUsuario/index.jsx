@@ -12,24 +12,23 @@ function FormUsuario({onSubmit}) {
     const onChange = (e) =>{
         const {name, value} = e.target;
         setFormDataUser({...FormDataUser, [name]: value});
-
-        console.log(FormDataUser);
     }
 
 
     return (
         <form className='FormUsuario'>
-             <FormControl isRequired>
-                <FormLabel htmlFor='nome'>Nome</FormLabel>
-                <Input variant='flushed' type='text' value={FormDataUser.nome} onChange={onChange} name='nome' placeholder={'Preencha o seu nome completo'} />        
+             <FormControl isRequired className='formGrupo'>
+                <FormLabel className='label' htmlFor='nome'>Nome</FormLabel>
+                <Input className='input' variant='flushed' type='text' value={FormDataUser.nome} onChange={onChange} name='nome' placeholder='Preencha o seu nome completo' />        
             </FormControl>
 
-            <FormControl isRequired>
-                <FormLabel htmlFor='cpf'>CPF</FormLabel>
-                <Input variant='flushed' type='text' value={FormDataUser.cpf} onChange={onChange} name='cpf' placeholder={'Preencha o seu CPF com apenas números'}  />
+            <FormControl isRequired className='formGrupo'>
+                <FormLabel className='label' htmlFor='cpf'>CPF</FormLabel>
+                <Input className='input' variant='flushed' type='text' value={FormDataUser.cpf} onChange={onChange} name='cpf' placeholder='Preencha o seu CPF com apenas números'  />
             </FormControl>
-
-            <Botao texto={'CADASTRAR'} onClick={(e) => onSubmit(e, FormDataUser)} />
+            <FormControl className='submit'>
+                <Botao texto={'CADASTRAR'} onClick={(e) => onSubmit(e, FormDataUser)} />
+            </FormControl>
         </form>
     );
 

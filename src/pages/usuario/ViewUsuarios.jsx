@@ -3,6 +3,7 @@ import SubTitulo from "../../components/subtitulo";
 import { useEffect, useState } from "react";
 import Api from '../../lib/api';
 import { toast } from 'react-toastify';
+import ContainerUser from "../../components/containerUser";
 
 
 function ViewUsuarios(){
@@ -26,13 +27,22 @@ function ViewUsuarios(){
     return(
         <div>
             <TituloCard texto={'Usuários registrados'} color={'#FFFFFF'} />
-            <div>
+            <ContainerUser> 
                 {
                     usuarios.map((usuario) => (
-                        <SubTitulo color={'#FFFFFF'} tamanho={'1em'} >{usuario.nome}</SubTitulo>
+                        usuario ?(
+                            <span className="dFlex justify-content-between"> 
+                                <SubTitulo color={'#FFFFFF'} tamanho={'1em'} >Nome : {usuario.nome}</SubTitulo>
+                                <SubTitulo color={'#FFFFFF'} tamanho={'1em'} >CPF : {usuario.cpf}</SubTitulo>
+                            </span>
+                        ): (
+                            <span className="dFlex"> 
+                                <SubTitulo color={'#FFFFFF'} tamanho={'1em'} >Nenhum usuário registrado no momento</SubTitulo>
+                            </span>
+                        )
                     ))
                 }
-            </div>
+            </ContainerUser>
         </div>
     )
 }

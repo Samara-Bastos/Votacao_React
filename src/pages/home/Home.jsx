@@ -1,17 +1,17 @@
 import Botao from "../../components/botao";
+import HomeDetalhes from "../../components/home";
 import TituloCard from "../../components/tituloCard";
-
+import { Link } from "react-router-dom";
 
 function Home(){
-
-    const teste = () => {
-        console.log("Botão clicado!");
-    };
     
     return(
        <div>
-            <TituloCard texto={'Bem vindo ao VotaLeb'} color={'#FFFFFF'} />
-            <Botao texto={'CADASTRAR PAUTA'} onClick={teste} />
+            <TituloCard texto={'Bem-vindo ao Sistema de Votação Online!'} color={'#FFFFFF'} />
+            <HomeDetalhes />
+            <Link to={`/usuario`}> 
+                <Botao texto={'CADASTRAR USUÁRIO'} />
+            </Link>
        </div>
               
     )
