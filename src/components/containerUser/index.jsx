@@ -5,6 +5,10 @@ const DivEstilizado = styled.div`
     min-height: 70vh;
     font-size: 1.2em;
     margin-top: 50px;
+
+    @media (max-width: 1443px) {
+        min-width: 40vh !important;
+    }
 `;
 
 function ContainerUser({children}) {

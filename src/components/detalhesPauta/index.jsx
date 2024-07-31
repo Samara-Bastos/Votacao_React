@@ -10,6 +10,10 @@ const ContainerDetalhes = styled.div`
 
 const TituloDetalhes = styled.span`
     font-size: 1.3em;
+    white-space: nowrap;         
+    overflow: hidden;          
+    text-overflow: ellipsis;
+    margin-right: 3px;
 `;
 
 const IconEngrenagem = styled.span`

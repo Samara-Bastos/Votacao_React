@@ -42,11 +42,7 @@ function ViewPautas(){
         <div>
             <TituloCard texto={'Pautas'} color={'#FFFFFF'} />
 
-            <FormControl style={{ marginBottom: '40px', 
-                                width: '17%',
-                                float: 'right',
-                                color:'#FFFFFF'}}
-            >
+            <FormControl className="formCategoria" >
                 <FormLabel htmlFor="categoria">Filtrar por categoria:</FormLabel>
 
                 <Select id="categoria" value={categoriaSelecionada} onChange={handleCategoriaChange}>

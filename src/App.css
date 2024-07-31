@@ -17,3 +17,17 @@
 .justify-content-between{
   justify-content: space-between;
 }
+
+@media (max-width: 1443px) {
+  .Outlet{
+    min-height: 92vh;
+    padding: 60px 90px 80px 90px;
+  }
+}
+
+@media (max-width: 500px) {
+  .Outlet{
+    min-height: 92vh;
+    padding: 50px 60px 80px 60px;
+  }
+}

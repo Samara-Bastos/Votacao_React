@@ -9,12 +9,20 @@ const ContainerDetalhes = styled.div`
 
 const TituloDetalhes = styled.span`
     font-size: 1.5em;
+
+    @media (max-width: 1443px) {
+        font-size: 1.1em; 
+    }
     
 `;
 
 const Texto = styled.span`
     font-size: 1.2em;
     padding: 10px 0px 10px 0px;
+
+    @media (max-width: 1443px) {
+        font-size: 1em; 
+    }
     
 `;
 
