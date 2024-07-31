@@ -7,9 +7,13 @@
 
 .Outlet{
   min-height: 92vh;
+  padding: 80px 200px 80px 200px;
+}
+
+.dFlex{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 50px;
+}
+
+.justify-content-between{
+  justify-content: space-between;
 }

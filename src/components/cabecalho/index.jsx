@@ -39,7 +39,7 @@ function Cabecalho() {
 
               <Link to={`/pauta/view`}>
                 <MenuItem icon={<HamburgerIcon boxSize={4} />} command='⌘'>
-                  Pautas ativas
+                  Pautas
                 </MenuItem>
               </Link>
 
@@ -51,7 +51,7 @@ function Cabecalho() {
 
               <Link to={`/usuario/view`}>
                 <MenuItem icon={<HamburgerIcon boxSize={4} />} command='⌘'>
-                  Usuários cadastrados
+                  Usuários registrados
                 </MenuItem>
               </Link>
             </MenuList>

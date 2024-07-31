@@ -6,6 +6,7 @@ import Api from '../../lib/api';
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import DetalhesPautaVoto from "../../components/detalhesPautaSelecionada";
 
 function Votacao(){
     const { id } = useParams();
@@ -38,17 +39,19 @@ function Votacao(){
     
     return(
        <Box>
+            
             {
                 Pauta ?(
-                    <div> 
+                    <div style={{padding: '40px 50px 20px 50px'}} > 
                         <TituloCard texto={'Tela de votação'} color={'#607a8d'} />
-
+                        <DetalhesPautaVoto titulo={Pauta.titulo}  descricao={Pauta.descricao} />
                         <FormVoto registrarVoto={registrarVoto} />
                     </div>
                 ):(
                     <span>A pauta não está disponivel no momento</span>
                 )
             }
+           
        </Box>
               
     )
