@@ -6,6 +6,7 @@ import Botao from "../../components/botao";
 const ContainerDetalhes = styled.div`
     display:flex;
     flex-direction: column;
+    width: 70%;
 `;
 
 const TituloDetalhes = styled.span`
@@ -13,7 +14,6 @@ const TituloDetalhes = styled.span`
     white-space: nowrap;         
     overflow: hidden;          
     text-overflow: ellipsis;
-    margin-right: 3px;
 `;
 
 const IconEngrenagem = styled.span`

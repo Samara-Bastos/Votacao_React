@@ -17,7 +17,6 @@ function ViewPautaId(){
         Api.get(`/pauta/view/${id}`)
             .then((response) => {
                 const data = response.data;
-                console.log(data)
                 setPauta(data);
             })
             .catch((error) => {
@@ -33,7 +32,8 @@ function ViewPautaId(){
                         <TituloCard texto={'Detalhes'} color={'#607a8d'} />
                             {
                                 Pauta.votacao ?(
-                                    <DetalhesPautaSelecionada 
+                                    <DetalhesPautaSelecionada
+                                    titulo={Pauta.titulo} 
                                         descricao={Pauta.descricao} 
                                         situacao={Pauta.votacao.situacao}
                                         resultado={Pauta.votacao.resultado}

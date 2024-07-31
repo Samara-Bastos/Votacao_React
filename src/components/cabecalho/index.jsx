@@ -1,5 +1,6 @@
 import './style.css';
 import { Link } from "react-router-dom";
+import Logo from '../../assets/logo.png'
 import {
   Menu,
   MenuButton,
@@ -17,7 +18,7 @@ import {
 function Cabecalho() {
     return (
       <div className="Cabecalho">
-          <img src='' alt='logo'/>
+          <img className='logo' src={Logo} alt='logo'/>
           <Menu>
             <MenuButton
               as={IconButton}

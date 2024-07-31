@@ -1,34 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { parse, differenceInMinutes } from 'date-fns';
+import { parse, differenceInSeconds } from 'date-fns';
 
-const Timer = ({ tempoInicio, tempoFim }) => {
-
+const Timer = ({ tempoFim }) => {
     const formato = 'HH:mm:ss';
-
-    const inicio = parse(tempoInicio, formato, new Date());
     const fim = parse(tempoFim, formato, new Date());
-    
-    const totalMinutes = differenceInMinutes(fim, inicio);
 
-    const [minutes, setMinutes] = useState(totalMinutes);
-    const [seconds, setSeconds] = useState(0);
+    const totalSeconds = differenceInSeconds(fim, new Date());
+
+    const [secondsLeft, setSecondsLeft] = useState(totalSeconds);
 
     useEffect(() => {
         const timerId = setInterval(() => {
-            if (seconds === 0) {
-                if (minutes === 0) {
-                    clearInterval(timerId);
-                } else {
-                    setMinutes(minutes - 1);
-                    setSeconds(59);
-                }
+            if (secondsLeft <= 0) {
+                clearInterval(timerId);
             } else {
-                setSeconds(seconds - 1);
+                setSecondsLeft(secondsLeft - 1);
             }
         }, 1000);
 
         return () => clearInterval(timerId);
-    }, [minutes, seconds]);
+    }, [secondsLeft]);
+
+    const minutes = Math.floor(secondsLeft / 60);
+    const seconds = secondsLeft % 60;
 
     return (
         <div>
