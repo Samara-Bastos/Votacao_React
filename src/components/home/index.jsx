@@ -41,9 +41,8 @@ function HomeDetalhes() {
                 <div>
                     Este sistema foi desenvolvido para facilitar a criação e participação em sessões de votação de forma simples e eficaz. Siga as instruções abaixo para utilizar o sistema:
                 </div> 
-                <br /><br />
+                <br />
                 <div> 
-                    Como Usar <br />
                     Cadastro de Usuários <br />
                     Cadastre-se com um CPF válido para poder votar. <br /><br />
                     
