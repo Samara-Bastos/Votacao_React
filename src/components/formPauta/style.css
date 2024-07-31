@@ -1,0 +1,29 @@
+.FormPauta{
+    padding: 40px 50px 20px 50px;
+}
+
+.label{
+    font-size: 1.2em !important;
+    font-family: 'Times New Roman', Times, serif !important;
+}
+
+.input{
+    font-size: 1em !important;
+    font-family: 'Times New Roman', Times, serif !important;
+}
+
+.submit{
+    right: 5px;
+    margin-top: 80px;
+    text-align: end;
+}
+
+.formGrupo{
+    padding: 16px 0px 16px 0px;
+}
+
+.div-switch{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

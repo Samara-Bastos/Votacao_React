@@ -1,3 +1,33 @@
 .App {
-  text-align: center;
+  background-color: #607A8D;
+  min-height: 100vh;
+  font-family: 'Times New Roman', Times, serif !important;
+  color: #607A8D !important;
+}
+
+.Outlet{
+  min-height: 92vh;
+  padding: 80px 200px 80px 200px;
+}
+
+.dFlex{
+  display: flex;
+}
+
+.justify-content-between{
+  justify-content: space-between;
+}
+
+@media (max-width: 1443px) {
+  .Outlet{
+    min-height: 92vh;
+    padding: 60px 90px 80px 90px;
+  }
+}
+
+@media (max-width: 500px) {
+  .Outlet{
+    min-height: 92vh;
+    padding: 50px 60px 80px 60px;
+  }
 }

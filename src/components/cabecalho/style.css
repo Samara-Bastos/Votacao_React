@@ -1,0 +1,15 @@
+.Cabecalho{
+    background-color: #FFFFFF;
+    min-height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right:20px;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    padding: 6px;
+}

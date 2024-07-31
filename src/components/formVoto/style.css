@@ -1,0 +1,28 @@
+.label{
+    font-size: 1.2em !important;
+    font-family: 'Times New Roman', Times, serif !important;
+}
+
+.input{
+    font-size: 1em !important;
+    font-family: 'Times New Roman', Times, serif !important;
+}
+
+.submit{
+    right: 5px;
+    margin-top: 80px;
+    text-align: end;
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.formGrupo{
+    padding: 16px 0px 16px 0px;
+}
+
+.div-switch{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
