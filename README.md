@@ -1,8 +1,7 @@
 # Sistema de Votação
 
 ## Sobre
-Este projeto frontend foi desenvolvido para consumir uma API construída com Spring Boot, para a resolução desse [DESAFIO](https://github.com/Samara-Bastos/votacao-react-java). 
-Ele é construído utilizando React e Chakra UI para a interface do usuário.
+Este projeto frontend foi desenvolvido para consumir uma API construída com Spring Boot, para a resolução desse [DESAFIO](https://github.com/Samara-Bastos/votacao-react-java).  Ele é construído utilizando React e Chakra UI para a interface do usuário.
 
 
 ## Executar
@@ -10,7 +9,7 @@ Para iniciar o projeto, siga essas instruções:
 
 Acesse o repositório da api, baixe o projeto e rode o mesmo seguindo suas instruções :
 
-- https://github.com/Samara-Bastos/Votacao_Java/tree/dev
+- https://github.com/Samara-Bastos/Votacao_Java
 
 Instalação das dependências:
 
