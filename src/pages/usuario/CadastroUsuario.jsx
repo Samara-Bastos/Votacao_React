@@ -13,11 +13,11 @@ function CadastroUsuario(){
         e.preventDefault();
         
         Api.post("/usuario", FormDataUser)
-            .then((response) => {
+            .then(() => {
                 toast.success('Usuário inserido com sucesso!');
                 navigate('/usuario/view');
             })
-            .catch((error) => {
+            .catch(() => {
                 toast.error('Ocorreu algum problema, tente novamente por favor!');
             });
     }

@@ -19,7 +19,7 @@ function ViewPautaId(){
                 const data = response.data;
                 setPauta(data);
             })
-            .catch((error) => {
+            .catch(() => {
                 toast.error('Ocorreu algum problema, tente novamente por favor!');
             });
     }, [id])

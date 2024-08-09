@@ -19,7 +19,7 @@ function Votacao(){
                 const data = response.data;
                 setPauta(data);
             })
-            .catch((error) => {
+            .catch(() => {
                 toast.error('Ocorreu algum problema, tente novamente por favor!');
             });
     }, [id])
@@ -29,10 +29,10 @@ function Votacao(){
         e.preventDefault();
 
         Api.post(`/voto/${id}`, FormDataVoto)
-            .then((response) => {
+            .then(() => {
                 toast.success('Voto inserido com sucesso!');
                 navigate('/pauta/view');
-            }).catch((error) => {
+            }).catch(() => {
                 toast.error('Ocorreu algum problema, tente novamente por favor!');
             })
     })
