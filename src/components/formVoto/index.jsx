@@ -11,8 +11,12 @@ function FormVoto({registrarVoto}) {
         cpf: ''
     });
 
-    const onChange = (e) =>{
-        const {name, value} = e.target;
+    const onChangeCpf = (e) =>{
+        const name = e.target.name;
+        let value = e.target.value.replace(/\D/g, ''); 
+        value = value.replace(/(\d{3})(\d)/, '$1.$2');     
+        value = value.replace(/(\d{3})(\d)/, '$1.$2');     
+        value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
         setFormDataVoto({...FormDataVoto, [name]: value});
     }
 
@@ -25,7 +29,7 @@ function FormVoto({registrarVoto}) {
         <form className='FormVoto'>
             <FormControl isRequired className='formGrupo'>
                 <FormLabel className='label' htmlFor='cpf'>CPF</FormLabel>
-                <Input className='input' variant='flushed' type='text' value={FormDataVoto.cpf} onChange={onChange} name='cpf' placeholder={'Preencha o seu CPF com apenas números'}  />
+                <Input className='input' variant='flushed' type='text' value={FormDataVoto.cpf} onChange={onChangeCpf} name='cpf' placeholder={'Preencha o seu CPF com apenas números'} maxlength="14"  />
             </FormControl>
 
             <FormControl isRequired className='formGrupo'>
