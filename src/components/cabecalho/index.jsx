@@ -1,4 +1,4 @@
-import './style.css';
+import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import Logo from '../../assets/logo.png'
 import {
@@ -15,10 +15,26 @@ import {
   CalendarIcon
 } from '@chakra-ui/icons';
 
+const CabecalhoEstilizado = styled.div`
+  background-color: #FFFFFF;
+    min-height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right:20px;
+`
+
+const Imagem = styled.img`
+    height: 50px;
+    width: 50px;
+    padding: 6px;
+`
+
 function Cabecalho() {
     return (
-      <div className="Cabecalho">
-          <img className='logo' src={Logo} alt='logo'/>
+      <CabecalhoEstilizado>
+          <Imagem src={Logo} alt='logo'/>
           <Menu>
             <MenuButton
               as={IconButton}
@@ -57,7 +73,7 @@ function Cabecalho() {
               </Link>
             </MenuList>
           </Menu>
-      </div>
+      </CabecalhoEstilizado>
     );
 }
 
