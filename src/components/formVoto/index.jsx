@@ -1,7 +1,7 @@
 import './style.css';
 import Botao from "../../components/botao";
 import { useState } from 'react';
-import {FormControl,FormLabel, Input, Radio, RadioGroup} from '@chakra-ui/react';
+import {FormControl,FormLabel, Input, Radio, RadioGroup, FormErrorMessage} from '@chakra-ui/react';
 import {Link } from 'react-router-dom';
 
 
@@ -9,6 +9,11 @@ function FormVoto({registrarVoto}) {
     const [FormDataVoto, setFormDataVoto] = useState({
         tipo: '',
         cpf: ''
+    });
+
+    const [erro, setErro] = useState({
+        tipo: false,
+        cpf: false
     });
 
     const onChangeCpf = (e) =>{
@@ -24,20 +29,56 @@ function FormVoto({registrarVoto}) {
         setFormDataVoto({...FormDataVoto, tipo: value});
     }
 
+    const validaCPF = (cpf) => {
+        return cpf.length === 14; 
+      };
+    
+    const validaForm = () => {
+
+        let validacao = true;
+        let novosErros = {
+            tipo: false,
+            cpf: false
+        };
+    
+        if (FormDataVoto.tipo === '') {
+            novosErros.tipo = true;
+            validacao = false;
+        }
+    
+        if (!validaCPF(FormDataVoto.cpf)) {
+            novosErros.cpf = true;
+            validacao = false;
+        }
+      
+        setErro(novosErros);
+        return validacao;
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        if (validaForm()) {
+            registrarVoto(e, FormDataVoto);
+        }
+    };
+
 
     return (
         <form className='FormVoto'>
-            <FormControl isRequired className='formGrupo'>
+            <FormControl isRequired className='formGrupo' isInvalid={erro.cpf}>
                 <FormLabel className='label' htmlFor='cpf'>CPF</FormLabel>
-                <Input className='input' variant='flushed' type='text' value={FormDataVoto.cpf} onChange={onChangeCpf} name='cpf' placeholder={'Preencha o seu CPF com apenas números'} maxlength="14"  />
+                <Input className='input' variant='flushed' type='text' value={FormDataVoto.cpf} onChange={onChangeCpf} name='cpf' placeholder={'Preencha o seu CPF com apenas números'} maxLength="14"  />
+                {erro.cpf ? <FormErrorMessage>CPF inválido. Verifique o formato.</FormErrorMessage>: ""}
             </FormControl>
 
-            <FormControl isRequired className='formGrupo'>
+            <FormControl isRequired className='formGrupo' isInvalid={erro.tipo}>
                 <FormLabel className='label' htmlFor='tipo'> Voto </FormLabel>
                 <RadioGroup className='input' name='tipo'  value={FormDataVoto.tipo} onChange={onChangeRadio} >
                     <Radio value='SIM' mr={4}>SIM </Radio>
                     <Radio value='NAO' mr={4}> NÃO </Radio>
                 </RadioGroup>
+                {erro.tipo ? <FormErrorMessage>Selecione uma opção de voto.</FormErrorMessage>: ""}
             </FormControl>
 
             <FormControl className='submit'>
@@ -45,7 +86,7 @@ function FormVoto({registrarVoto}) {
                     <Botao texto={'VOLTAR'}/>
                 </Link>
 
-                <Botao className='submit' texto={'CONFIRMAR'} onClick={(e) => registrarVoto(e, FormDataVoto)} />
+                <Botao className='submit' texto={'CONFIRMAR'} onClick={onSubmit}/>
             </FormControl>
         </form>
     );

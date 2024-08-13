@@ -1,13 +1,19 @@
 import './style.css';
 import Botao from "../../components/botao";
 import { useState } from 'react';
-import {FormControl,FormLabel, Input} from '@chakra-ui/react';
+import {FormControl,FormLabel, Input, FormErrorMessage} from '@chakra-ui/react';
+import {Link } from 'react-router-dom';
 
 function FormUsuario({onSubmit}) {
     const [FormDataUser, setFormDataUser] = useState({
         nome: '',
         cpf: ''
     });
+
+    const [erro, setErro] = useState({
+        nome: false,
+        cpf: false
+    })
 
     const onChange = (e) =>{
         const {name, value} = e.target;
@@ -23,20 +29,58 @@ function FormUsuario({onSubmit}) {
         setFormDataUser({...FormDataUser, [name]: value});
     }
 
+    const validaCpf = (cpf) => {
+        return cpf.length === 14;
+    }
+
+    const validaForm = () => {
+        let validacao = true;
+        let novosErros = {
+            nome: false,
+            cpf: false
+        }
+
+        if(FormDataUser.nome === ''){
+            novosErros.nome = true;
+            validacao = false;
+        }
+
+        if(!validaCpf(FormDataUser.cpf)){
+            novosErros.cpf = true;
+            validacao = false
+        }
+
+        setErro(novosErros);
+        return validacao;
+    }
+
+    const enviaForm = (e) => {
+        e.preventDefault();
+
+        if(validaForm()){
+            onSubmit(e, FormDataUser);
+        }
+    }
 
     return (
         <form className='FormUsuario'>
-             <FormControl isRequired className='formGrupo'>
+             <FormControl isRequired className='formGrupo' isInvalid={erro.nome}>
                 <FormLabel className='label' htmlFor='nome'>Nome</FormLabel>
-                <Input className='input' variant='flushed' type='text' value={FormDataUser.nome} onChange={onChange} name='nome' placeholder='Preencha o seu nome completo' />        
+                <Input className='input' variant='flushed' type='text' value={FormDataUser.nome} onChange={onChange} name='nome' placeholder='Preencha o seu nome completo' />   
+                {erro.nome ? <FormErrorMessage>O nome precisa ser preenchido</FormErrorMessage> : ""}
             </FormControl>
 
-            <FormControl isRequired className='formGrupo'>
+            <FormControl isRequired className='formGrupo' isInvalid={erro.cpf}>
                 <FormLabel className='label' htmlFor='cpf'>CPF</FormLabel>
-                <Input className='input' variant='flushed' type='text' value={FormDataUser.cpf} onChange={onChangeCpf} name='cpf' placeholder='Preencha o seu CPF com apenas números' maxlength="14"/>
+                <Input className='input' variant='flushed' type='text' value={FormDataUser.cpf} onChange={onChangeCpf} name='cpf' placeholder='Preencha o seu CPF com apenas números' maxLength="14"/>
+                {erro.cpf ? <FormErrorMessage>CPF inválido. Verifique o formato.</FormErrorMessage> : ""}
             </FormControl>
+
             <FormControl className='submit'>
-                <Botao texto={'CADASTRAR'} onClick={(e) => onSubmit(e, FormDataUser)} />
+                <Link to={`/pauta/view`}>
+                    <Botao texto={'VOLTAR'}/>
+                </Link>
+                <Botao texto={'CADASTRAR'} onClick={enviaForm} />
             </FormControl>
         </form>
     );
