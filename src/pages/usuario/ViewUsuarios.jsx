@@ -9,19 +9,15 @@ import ContainerUser from "../../components/containerUser";
 function ViewUsuarios(){
     const [usuarios, setUsuarios] = useState([]);
 
-    const getUsuarios = async() => {
-        await Api.get("/usuario/view")
-                .then((response) => {
-                    const data = response.data;
-                    setUsuarios(data);
-                })
-                .catch((error) => {
-                    toast.error('Ocorreu algum problema, tente novamente por favor!');
-                });
-    }
-
     useEffect(()=> {
-        getUsuarios();
+        Api.get("/usuario/view")
+            .then((response) => {
+                const data = response.data;
+                setUsuarios(data);
+            })
+            .catch(() => {
+                toast.error('Ocorreu algum problema, tente novamente por favor!');
+            });
     }, [])
 
     return(

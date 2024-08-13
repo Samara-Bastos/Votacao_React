@@ -24,7 +24,7 @@ function ViewPautas(){
                     const categoriasUnicas = [...new Set(data.map(pauta => pauta.categoria))];
                     setCategorias(categoriasUnicas);
                 })
-                .catch((error) => {
+                .catch(() => {
                     toast.error('Ocorreu algum problema, tente novamente por favor!');
                 });
     }, [])

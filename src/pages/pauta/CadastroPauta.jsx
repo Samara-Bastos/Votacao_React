@@ -12,10 +12,10 @@ function CadastroPauta(){
         e.preventDefault();
 
         Api.post("/pauta",FormDataPauta)
-            .then((response) => {
+            .then(() => {
                 toast.success('Pauta inserida com sucesso!');
                 navigate('/pauta/view');
-            }).catch((error) => {
+            }).catch(() => {
                 toast.error('Ocorreu algum problema, tente novamente por favor!');
             })
     };
