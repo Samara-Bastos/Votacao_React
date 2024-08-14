@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
             element: <CadastroUsuario />
         },
         {
-            path: "/usuario/view",
+            path: "/usuario/visualizar",
             element: <ViewUsuarios />
         },
         {
@@ -29,11 +29,11 @@ export const router = createBrowserRouter([
             element: <CadastroPauta />
         },
         {
-            path: "/pauta/view",
+            path: "/pauta/visualizar",
             element: <ViewPautas />
         },
         {
-            path: "/pauta/view/:id",
+            path: "/pauta/visualizar/:id",
             element: <ViewPautaId />
         },
         {

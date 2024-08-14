@@ -14,7 +14,7 @@ function CadastroPauta(){
         Api.post("/pauta",FormDataPauta)
             .then(() => {
                 toast.success('Pauta inserida com sucesso!');
-                navigate('/pauta/view');
+                navigate('/pauta/visualizar');
             }).catch(() => {
                 toast.error('Ocorreu algum problema, tente novamente por favor!');
             })

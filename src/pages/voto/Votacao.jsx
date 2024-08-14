@@ -14,7 +14,7 @@ function Votacao(){
     const navigate = useNavigate();
 
     useEffect(()=> {
-        Api.get(`/pauta/view/${id}`)
+        Api.get(`/pauta/visualizar/${id}`)
             .then((response) => {
                 const data = response.data;
                 setPauta(data);
@@ -31,7 +31,7 @@ function Votacao(){
         Api.post(`/voto/${id}`, FormDataVoto)
             .then(() => {
                 toast.success('Voto inserido com sucesso!');
-                navigate('/pauta/view');
+                navigate('/pauta/visualizar');
             }).catch(() => {
                 toast.error('Ocorreu algum problema, tente novamente por favor!');
             })

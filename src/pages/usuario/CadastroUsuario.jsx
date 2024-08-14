@@ -15,7 +15,7 @@ function CadastroUsuario(){
         Api.post("/usuario", FormDataUser)
             .then(() => {
                 toast.success('Usuário inserido com sucesso!');
-                navigate('/usuario/view');
+                navigate('/usuario/visualizar');
             })
             .catch(() => {
                 toast.error('Ocorreu algum problema, tente novamente por favor!');

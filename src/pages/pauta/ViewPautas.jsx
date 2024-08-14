@@ -16,7 +16,7 @@ function ViewPautas(){
 
 
     useEffect(()=> {
-        Api.get("/pauta/view")
+        Api.get("/pauta/visualizar")
                 .then((response) => {
                     const data = response.data;
                     setPautas(data);
@@ -64,7 +64,7 @@ function ViewPautas(){
                                         tempoInicio={Pauta.votacao.tempoInicioSessao} 
                                         tempoFim={Pauta.votacao.tempoFimSessao} 
                                     />}
-                                    linkDetalhes={`/pauta/view/${Pauta.id}`} 
+                                    linkDetalhes={`/pauta/visualizar/${Pauta.id}`} 
                                     linkVotacao={`/voto/${Pauta.votacao.idVotacao}`}
                                 />
  
@@ -72,7 +72,7 @@ function ViewPautas(){
                         ) : (
                             <CardPauta bg={'rgba(255, 255, 255, 0.5)'}>
                                 <DetalhesPauta titulo={Pauta.titulo} 
-                                    linkDetalhes={`/pauta/view/${Pauta.id}`} 
+                                    linkDetalhes={`/pauta/visualizar/${Pauta.id}`} 
                                 />
                             </CardPauta>
                         )
