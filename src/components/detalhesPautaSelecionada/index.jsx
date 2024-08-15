@@ -54,7 +54,7 @@ function DetalhesPautaSelecionada({titulo, descricao, situacao, resultado, votos
                 ) : ("")
             }
             {
-                votosim ?(
+                (votosim || votonao) ?(
                     <ContainerVotos>
                         <Texto>Votos positivos : {votosim}</Texto>
                         <Texto>Votos negativos : {votonao}</Texto>

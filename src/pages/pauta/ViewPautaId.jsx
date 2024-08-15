@@ -17,6 +17,7 @@ function ViewPautaId(){
         Api.get(`/pauta/visualizar/${id}`)
             .then((response) => {
                 const data = response.data;
+                console.log(data)
                 setPauta(data);
             })
             .catch(() => {
