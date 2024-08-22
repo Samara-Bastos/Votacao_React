@@ -19,7 +19,7 @@ Inicialização do projeto:
 
 - npm start
 
-Ou, para acessar a mesma de forma remota segue o link : 
+Ou, para acessar o mesmo de forma remota segue o link : 
 
 - https://votacao-mgdy.onrender.com/
 
