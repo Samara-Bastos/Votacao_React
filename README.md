@@ -34,16 +34,16 @@ O projeto utiliza React Router para navegação entre diferentes páginas:
 /usuario
 - Criação de um novo usuário com CPF válido 
 
-/usuario/view
+/usuario/visualizar
 - Visualização de todos os usuários cadastrados
 
 /pauta
 - Criação de uma nova pauta
 
-/pauta/view
+/pauta/visualizar
 - Visualização de todas as pautas cadastradas
 
-/pauta/view/:id
+/pauta/visualizar/:id
 - Visualização da pauta selecionada
 
 /voto/:id 
@@ -56,11 +56,11 @@ O projeto utiliza React Router para navegação entre diferentes páginas:
     - ✅ [US001-1] Design das telas
 - ✅ [US002] Criar rotas e pages
     - ✅ [US002-1] Page Usuario cadastro
-    - ✅ [US002-2] Page Usuario view
+    - ✅ [US002-2] Page Usuario visualizar
     - ✅ [US002-3] Page votacao
     - ✅ [US002-4] Page Pauta cadastro
-    - ✅ [US002-5] Page Pauta view
-    - ✅ [US002-6] Page Pauta view por id
+    - ✅ [US002-5] Page Pauta visualizar
+    - ✅ [US002-6] Page Pauta visualizar por id
 - ✅ [US003] Criar componentes
     - ✅ [US003-1] Componente card
     - ✅ [US003-2] Componente cabecalho

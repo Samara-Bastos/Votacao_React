@@ -77,7 +77,7 @@ function FormUsuario({onSubmit}) {
             </FormControl>
 
             <FormControl className='submit'>
-                <Link to={`/pauta/view`}>
+                <Link to={`/pauta/visualizar`}>
                     <Botao texto={'VOLTAR'}/>
                 </Link>
                 <Botao texto={'CADASTRAR'} onClick={enviaForm} />

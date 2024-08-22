@@ -10,7 +10,7 @@ function ViewUsuarios(){
     const [usuarios, setUsuarios] = useState([]);
 
     useEffect(()=> {
-        Api.get("/usuario/view")
+        Api.get("/usuario/visualizar")
             .then((response) => {
                 const data = response.data;
                 setUsuarios(data);

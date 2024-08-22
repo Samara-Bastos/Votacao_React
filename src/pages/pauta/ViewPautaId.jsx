@@ -14,9 +14,10 @@ function ViewPautaId(){
     const [Pauta, setPauta] = useState(null);
 
     useEffect(()=> {
-        Api.get(`/pauta/view/${id}`)
+        Api.get(`/pauta/visualizar/${id}`)
             .then((response) => {
                 const data = response.data;
+                console.log(data)
                 setPauta(data);
             })
             .catch(() => {
@@ -51,7 +52,7 @@ function ViewPautaId(){
                     <span>A pauta não está disponivel no momento</span>
                 ) 
             }
-            <Link to={`/pauta/view`}>
+            <Link to={`/pauta/visualizar`}>
                 <Botao texto={'VOLTAR'}/>
             </Link>
        </Box>     
