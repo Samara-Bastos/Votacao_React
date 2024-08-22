@@ -5,7 +5,7 @@ Este projeto frontend foi desenvolvido para consumir uma API construída com Spr
 
 
 ## Executar
-Para iniciar o projeto, siga essas instruções:
+Para iniciar o projeto localmente, siga essas instruções:
 
 Acesse o repositório da api, baixe o projeto e rode o mesmo seguindo suas instruções :
 
@@ -18,6 +18,10 @@ Instalação das dependências:
 Inicialização do projeto:
 
 - npm start
+
+Ou, para acessar a mesma de forma remota segue o link : 
+
+- https://votacao-mgdy.onrender.com/
 
 ##  Dependências
 - React
